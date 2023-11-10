@@ -21,4 +21,6 @@ docker-compose up --build -d
 
 yarn test
 
-git add . &&  g commit -s -m 'fixed test 2' && g push 
+git add . && g commit -s -m 'fixed test 3' && g push 
+
+g push
