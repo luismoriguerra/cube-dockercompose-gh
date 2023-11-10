@@ -5,6 +5,7 @@ https://www.cloudquery.io/docs/quickstart/macOS
 
 ## Create env
 export CROWD_SOURCE_PG_CONNECTION_STRING="postgresql://crowd:secret@localhost:5000/crowd?sslmode=disable"
+
 export LOCAL_DESTINATION_PG_CONNECTION_STRING="postgresql://crowd:secret@localhost:5001/crowd?sslmode=disable"
 
 ## Run sync for few minutes 
