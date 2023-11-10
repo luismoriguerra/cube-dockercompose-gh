@@ -7,12 +7,12 @@ services:
       context: .
       dockerfile: pg.Dockerfile
     volumes:
-      - ${PWD}/crowd.sql:/docker-entrypoint-initdb.d/crowd.sql
+      - ./sql_scripts:/docker-entrypoint-initdb.d/
       - ${PWD}/postgres-data/:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER=${POSTGRES_USER:-postgres}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
-      - POSTGRES_DB=${POSTGRES_DB:-postgres}
+      - POSTGRES_USER=${POSTGRES_USER:-crowd}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-crowd}
+      - POSTGRES_DB=${POSTGRES_DB:-crowd}
     ports:
      - 5001:5432
   cube_api:
@@ -23,9 +23,9 @@ services:
       - CUBEJS_LOG_LEVEL=info
       - DEBUG_LOG=true
       - CUBEJS_DB_HOST=postgres
-      - CUBEJS_DB_USER=postgres
-      - CUBEJS_DB_NAME=${POSTGRES_DB:-postgres}
-      - CUBEJS_DB_PASS=${POSTGRES_PASSWORD:-postgres}
+      - CUBEJS_DB_USER=${POSTGRES_USER:-crowd}
+      - CUBEJS_DB_NAME=${POSTGRES_DB:-crowd}
+      - CUBEJS_DB_PASS=${POSTGRES_PASSWORD:-crowd}
       - CUBEJS_DB_PORT=5432
       - CUBEJS_API_SECRET=secret1234
       - CUBEJS_DB_TYPE=postgres
