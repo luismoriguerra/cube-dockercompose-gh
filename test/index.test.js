@@ -36,24 +36,24 @@ test("Expect row count to be 4", async () => {
   }
 });
 
-// test("Perform Dry run", async () => {
-//   const resultSet = await dryRun(count_query);
-//   expect(resultSet.normalizedQueries[0].measures[0]).toBe(
-//     count_query.measures[0]
-//   );
-// });
+test("Perform Dry run", async () => {
+  const resultSet = await dryRun(count_query);
+  expect(resultSet.normalizedQueries[0].measures[0]).toBe(
+    count_query.measures[0]
+  );
+});
 
-// test("Invalid Query Dry run", async () => {
-//   const invalid_query = {
-//     measures: ["Orders2.count"],
-//     dimensions: ["Orders.title"],
-//     order: {
-//       "Orders.count": "desc",
-//     },
-//   };
-//   try {
-//     await dryRun(invalid_query);
-//   } catch (e) {
-//     expect(e.message).toBe("Cube 'Orders2' not found for path 'Orders2.count'");
-//   }
-// });
+test("Invalid Query Dry run", async () => {
+  const invalid_query = {
+    measures: ["Orders2.count"],
+    dimensions: ["Orders.title"],
+    order: {
+      "Orders.count": "desc",
+    },
+  };
+  try {
+    await dryRun(invalid_query);
+  } catch (e) {
+    expect(e.message).toBe("Cube 'Orders2' not found for path 'Orders2.count'");
+  }
+});
