@@ -19,11 +19,6 @@ cube(`activities`, {
       type: `string`
     },
     
-    sentiment: {
-      sql: `sentiment`,
-      type: `string`
-    },
-    
     type: {
       sql: `type`,
       type: `string`
