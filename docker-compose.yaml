@@ -20,6 +20,7 @@ services:
     ports:
       - 4000:4000
     environment:
+      - CUBEJS_SCHEMA_PATH=model
       - CUBEJS_LOG_LEVEL=info
       - DEBUG_LOG=true
       - CUBEJS_DB_HOST=postgres
@@ -45,6 +46,5 @@ services:
       - CUBEJS_DS_REDSHIFTLFX_DB_TYPE=${CUBEJS_DS_REDSHIFTLFX_DB_TYPE:-empty}
     volumes:
       - ${PWD}:/cube/conf
-      - ${PWD}/schema:/cube/schema
     depends_on:
       - postgres

@@ -34,11 +34,11 @@ jobs:
     - name: Start containers
       run: docker-compose -f "docker-compose.yaml" up -d --build
     - name: Install dependencies
-      run: yarn install
+      run: yarn install --frozen-lockfile
     - name: Run schema compile check
-      run: npm exec cubejs-cli validate
+      run: yarn validate
     - name: Run tests
-      run: yarn run test
+      run: yarn test
     - name: Stop containers
       if: always()
       run: docker-compose -f "docker-compose.yaml" down
