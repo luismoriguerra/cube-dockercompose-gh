@@ -11,3 +11,16 @@ set search_path to crowd_public;
 
 brew services restart postgresql
 brew services stop postgresql
+
+
+docker-compose up --build
+
+docker-compose down
+
+docker-compose up --build -d 
+
+yarn test
+
+git add . 
+g commit -s -m 'update gh'
+g push

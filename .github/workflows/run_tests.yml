@@ -23,19 +23,14 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 19.x
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Run schema compile check
-      run: npm exec cubejs-cli validate
-
     - name: Start containers
       run: docker-compose -f "docker-compose.yaml" up -d --build
-
+    - name: Install dependencies
+      run: yarn install
+    - name: Run schema compile check
+      run: npm exec cubejs-cli validate
     - name: Run tests
-      run: npm run test
-
+      run: yarn run test
     - name: Stop containers
       if: always()
       run: docker-compose -f "docker-compose.yaml" down

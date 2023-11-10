@@ -15,10 +15,10 @@ services:
 #      - 5432:5432
 
   cube_api:
-    image: cubejs/cube:v0.31.62
+    image: cubejs/cube:latest
     ports:
       - 4000:4000
-      - 5432:5432
+      # - 5432:5432
     environment:
       - CUBEJS_LOG_LEVEL=info
       - DEBUG_LOG=true
