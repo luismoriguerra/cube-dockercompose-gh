@@ -47,3 +47,4 @@ yarn test
 - [ ] update it as monorepo and add doc app
 - [ ] dbt layer (optional)
 - [ ] duckdb (intermediate layer)
+- [ ] add Dev container
