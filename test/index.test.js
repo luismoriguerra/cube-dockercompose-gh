@@ -12,11 +12,16 @@ const cubejsApi = new cubejs.CubejsApi(jwt, {
 });
 
 const count_query = {
-  measures: ["Orders.count"],
-  dimensions: ["Orders.title"],
+  measures: ["activities.count"],
+  timeDimensions: [
+    {
+      dimension: "activities.createdat",
+    },
+  ],
   order: {
-    "Orders.count": "desc",
+    "activities.count": "desc",
   },
+  dimensions: ["activities.username"],
 };
 
 async function getResults(query) {
@@ -27,9 +32,9 @@ async function dryRun(query) {
   return await cubejsApi.dryRun(query);
 }
 
-test("Expect row count to be 4", async () => {
-    const resultSet = await getResults(count_query);
-    expect(resultSet.loadResponses[0].data.length).toBe(4);
+test("Expect row count to be 0", async () => {
+  const resultSet = await getResults(count_query);
+  expect(resultSet.loadResponses[0].data.length).toBe(0);
 });
 
 test("Perform Dry run", async () => {
