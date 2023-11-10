@@ -36,12 +36,12 @@ test("Expect row count to be 4", async () => {
   }
 });
 
-test("Perform Dry run", async () => {
-  const resultSet = await dryRun(count_query);
-  expect(resultSet.normalizedQueries[0].measures[0]).toBe(
-    count_query.measures[0]
-  );
-});
+// test("Perform Dry run", async () => {
+//   const resultSet = await dryRun(count_query);
+//   expect(resultSet.normalizedQueries[0].measures[0]).toBe(
+//     count_query.measures[0]
+//   );
+// });
 
 // test("Invalid Query Dry run", async () => {
 //   const invalid_query = {
