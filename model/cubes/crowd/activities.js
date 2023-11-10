@@ -14,11 +14,6 @@ cube(`activities`, {
       primary_key: true
     },
     
-    iscontribution: {
-      sql: `iscontribution`,
-      type: `string`
-    },
-    
     attributes: {
       sql: `attributes`,
       type: `string`
