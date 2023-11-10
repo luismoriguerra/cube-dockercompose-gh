@@ -1,26 +1,32 @@
 cube(`activities`, {
   sql: `select * from crowd_public.activities`,
-  
+
   dataSource: `default`,
-  
-  joins: {
-    
-  },
-  
+
+  joins: {},
+
   dimensions: {
     id: {
       sql: `id`,
       type: `string`,
-      primaryKey: true
+      primaryKey: true,
+    },
+    username: {
+      sql: `username`,
+      type: `string`,
+    },
+    createdat: {
+      sql: `createdat`,
+      type: `time`,
     },
   },
-  
+
   measures: {
     count: {
-      type: `count`
-    }
+      type: `count`,
+    },
   },
-  
+
   // pre_aggregations: {
   //   // Pre-aggregation definitions go here.
   //   // Learn more in the documentation: https://cube.dev/docs/caching/pre-aggregations/getting-started
