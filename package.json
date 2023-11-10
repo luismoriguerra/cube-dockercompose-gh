@@ -4,7 +4,9 @@
     "description": "Cube tests",
     "main": "index.js",
     "scripts": {
-      "test": "jest"
+      "test": "jest",
+      "start": "docker-compose up --build",
+      "validate": "npx cubejs-cli validate"
     },
     "keywords": [
       "cube",
