@@ -3,9 +3,11 @@ version: '3.9'
 # WORKDIR=`pwd` docker-compose up
 services:
   postgres:
-    image: postgres:14.2
+    build:
+      context: .
+      dockerfile: pg.Dockerfile
     volumes:
-      - ${PWD}/structure.sql:/docker-entrypoint-initdb.d/structure.sql
+      - ${PWD}/crowd.sql:/docker-entrypoint-initdb.d/crowd.sql
       - ${PWD}/postgres-data/:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=${POSTGRES_USER:-postgres}
@@ -18,7 +20,6 @@ services:
     image: cubejs/cube:latest
     ports:
       - 4000:4000
-      # - 5432:5432
     environment:
       - CUBEJS_LOG_LEVEL=info
       - DEBUG_LOG=true
