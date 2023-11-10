@@ -10,7 +10,7 @@ const jwt = sign(data, secret);
 
 const cubejsApi = new cubejs.CubejsApi(
   jwt,
-  { apiUrl: 'http://localhost:4000/cubejs-api/v1' }
+  { apiUrl: 'http://cube_api:4000/cubejs-api/v1' }
 );
 
 const count_query ={
