@@ -12,10 +12,9 @@ services:
     environment:
       - POSTGRES_USER=${POSTGRES_USER:-postgres}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
-      - POSTGRES_DB=${POSTGRES_DB:-example}
-#    ports:
-#      - 5432:5432
-
+      - POSTGRES_DB=${POSTGRES_DB:-postgres}
+    ports:
+     - 5001:5432
   cube_api:
     image: cubejs/cube:latest
     ports:
@@ -25,7 +24,7 @@ services:
       - DEBUG_LOG=true
       - CUBEJS_DB_HOST=postgres
       - CUBEJS_DB_USER=postgres
-      - CUBEJS_DB_NAME=${POSTGRES_DB:-example}
+      - CUBEJS_DB_NAME=${POSTGRES_DB:-postgres}
       - CUBEJS_DB_PASS=${POSTGRES_PASSWORD:-postgres}
       - CUBEJS_DB_PORT=5432
       - CUBEJS_API_SECRET=secret1234
