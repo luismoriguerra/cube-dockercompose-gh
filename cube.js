@@ -26,18 +26,18 @@ module.exports = {
       })
     }
 
-    if(dataSource === 'reporting') {
-      console.log('REPORTING ACCESSED');
-      return new PostgresDriver({
-        database: `reporting`,
-        host: host,
-        user: user,
-        password: password,
-        port: port,
-      })
-    }
+    // if(dataSource === 'reporting') {
+    // }
+    console.log('REPORTING ACCESSED');
+    return new PostgresDriver({
+      database: `reporting`,
+      host: host,
+      user: user,
+      password: password,
+      port: port,
+    })
 
-    throw new Error('No valid APP ID found in Security Context!');
+    // throw new Error('No valid APP ID found in Security Context!');
   },
   scheduledRefreshContexts: async () => {
     return [
