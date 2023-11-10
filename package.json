@@ -18,8 +18,7 @@
   "author": "Paco Valdez",
   "license": "MIT",
   "dependencies": {
-    "@cubejs-backend/server-core": "^0.34.17",
-    "cubejs-cli": "^0.31.62"
+    "@cubejs-backend/server-core": "^0.34.17"
   },
   "devDependencies": {
     "@cubejs-client/core": "^0.31.62",
