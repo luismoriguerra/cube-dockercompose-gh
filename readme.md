@@ -39,9 +39,11 @@ yarn test
 ```
 
 ## TODO
-- [ ] Sync Data
+- [x] Sync Data tool
 - [x] Add more datasources
 - [x] Deploy to Dev by git connection
 - [x] Deploy to prod by cli
 - [ ] Add Review bot
 - [ ] update it as monorepo and add doc app
+- [ ] dbt layer (optional)
+- [ ] duckdb (intermediate layer)
