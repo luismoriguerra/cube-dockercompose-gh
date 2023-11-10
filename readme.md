@@ -9,6 +9,12 @@
 yarn start
 ```
 
+# Open
+
+```
+http://localhost:4000/#/build?query={%22measures%22:[%22activities.count%22],%22order%22:{%22activities.count%22:%22desc%22},%22dimensions%22:[%22activities.username%22]}
+```
+
 ## restart
 ```
 yarn clean
@@ -35,6 +41,6 @@ yarn test
 ## TODO
 - [ ] Sync Data
 - [x] Add more datasources
-- [ ] Deploy to Dev
-- [ ] Deploy to prod
+- [x] Deploy to Dev by git connection
+- [x] Deploy to prod by cli
 - [ ] Add Review bot
