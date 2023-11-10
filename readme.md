@@ -44,3 +44,4 @@ yarn test
 - [x] Deploy to Dev by git connection
 - [x] Deploy to prod by cli
 - [ ] Add Review bot
+- [ ] update it as monorepo and add doc app

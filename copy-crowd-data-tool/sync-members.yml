@@ -1,0 +1,20 @@
+kind: source
+spec:
+  name: crowddev-source
+  path: cloudquery/postgresql
+  version: "v3.0.6"
+  tables: ["members"]
+  destinations: ["postgresql"]
+  spec:
+    cdc: false
+    pgx_log_level: debug
+    connection_string: ${CROWD_SOURCE_PG_CONNECTION_STRING}
+---
+kind: destination
+spec:
+  name: "postgresql"
+  path: cloudquery/postgresql
+  version: "v6.1.0"
+  write_mode: "overwrite-delete-stale"
+  spec:
+    connection_string: ${LOCAL_DESTINATION_PG_CONNECTION_STRING}
