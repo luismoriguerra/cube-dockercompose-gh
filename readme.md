@@ -34,7 +34,7 @@ yarn test
 
 ## TODO
 - [ ] Sync Data
-- [ ] Add more datasources
+- [x] Add more datasources
 - [ ] Deploy to Dev
 - [ ] Deploy to prod
 - [ ] Add Review bot
