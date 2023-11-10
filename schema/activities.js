@@ -1,5 +1,5 @@
 cube(`activities`, {
-  sql: `select * from crowd_public.activities`,
+  sql: `select * from activities`,
 
   dataSource: `default`,
 
