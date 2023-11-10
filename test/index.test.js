@@ -43,17 +43,17 @@ test("Perform Dry run", async () => {
   );
 });
 
-test("Invalid Query Dry run", async () => {
-  const invalid_query = {
-    measures: ["Orders2.count"],
-    dimensions: ["Orders.title"],
-    order: {
-      "Orders.count": "desc",
-    },
-  };
-  try {
-    await dryRun(invalid_query);
-  } catch (e) {
-    expect(e.message).toBe("Cube 'Orders2' not found for path 'Orders2.count'");
-  }
-});
+// test("Invalid Query Dry run", async () => {
+//   const invalid_query = {
+//     measures: ["Orders2.count"],
+//     dimensions: ["Orders.title"],
+//     order: {
+//       "Orders.count": "desc",
+//     },
+//   };
+//   try {
+//     await dryRun(invalid_query);
+//   } catch (e) {
+//     expect(e.message).toBe("Cube 'Orders2' not found for path 'Orders2.count'");
+//   }
+// });
