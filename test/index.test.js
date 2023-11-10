@@ -28,12 +28,8 @@ async function dryRun(query) {
 }
 
 test("Expect row count to be 4", async () => {
-  try {
     const resultSet = await getResults(count_query);
     expect(resultSet.loadResponses[0].data.length).toBe(4);
-  } catch (error) {
-    console.error(error);
-  }
 });
 
 // test("Perform Dry run", async () => {
