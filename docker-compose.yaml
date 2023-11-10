@@ -46,6 +46,5 @@ services:
       - CUBEJS_DS_REDSHIFTLFX_DB_TYPE=${CUBEJS_DS_REDSHIFTLFX_DB_TYPE:-empty}
     volumes:
       - ${PWD}:/cube/conf
-      # - ${PWD}/model:/cube/model
     depends_on:
       - postgres

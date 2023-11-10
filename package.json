@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "docker-compose up --build",
-    "validate": "npx cubejs-cli validate",
+    "validate": "npx cubejs-cli validate -p ./model",
     "clean": "rm -rf postgres-data .cubestore node_modules",
     "build": "echo 'No build step'"
   },
